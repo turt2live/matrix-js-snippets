@@ -18,7 +18,7 @@ npm install matrix-js-snippets
 **Note**: This package is ES6 compatible and does *not* transpile automatically. 
 
 
-# Usage
+# Usage (matrix-js-sdk)
 
 ```javascript
 var matrixUtils = require("matrix-js-snippets");
