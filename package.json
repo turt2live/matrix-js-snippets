@@ -1,6 +1,6 @@
 {
   "name": "matrix-js-snippets",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A small collection of JS snippets for matrix bots",
   "author": "Travis Ralston <travis.nathaniel.ralston@gmail.com> (http://travisralston.me)",
   "license": "MIT",
