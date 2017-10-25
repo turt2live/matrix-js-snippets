@@ -1,6 +1,6 @@
 {
   "name": "matrix-js-snippets",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A small collection of JS snippets for matrix bots",
   "author": "Travis Ralston <travis.nathaniel.ralston@gmail.com> (http://travisralston.me)",
   "license": "MIT",
@@ -28,7 +28,11 @@
     "index.js",
     "lib/"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "moment": "^2.19.1",
+    "winston": "^2.4.0"
+  },
   "devDependencies": {
     "matrix-js-sdk": "^0.7.13"
   }
