@@ -12,8 +12,6 @@ This package can be found on [npm](https://www.npmjs.com):
 npm install matrix-js-snippets
 ```
 
-**Note**: This package is ES6 compatible and does *not* transpile automatically. 
-
 
 # Usage (matrix-js-sdk)
 

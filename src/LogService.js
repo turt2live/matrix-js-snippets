@@ -15,14 +15,16 @@ const TERM_COLORS = {
  * Configuration options for the log service
  */
 class LogConfig {
-    file = "logs/matrix.log";
-    console = true;
-    consoleLevel = "info";
-    fileLevel = "verbose";
-    rotate = {
-        size: 52428800, // bytes, default is 50mb
-        count: 5
-    };
+    constructor() {
+        this.file = "logs/matrix.log";
+        this.console = true;
+        this.consoleLevel = "info";
+        this.fileLevel = "verbose";
+        this.rotate = {
+            size: 52428800, // bytes, default is 50mb
+            count: 5,
+        };
+    }
 }
 
 let currentConfig = new LogConfig();
@@ -45,7 +47,7 @@ export default class LogService {
         const dir = path.join(logConfig.file, '..');
         try {
             fs.mkdirSync(dir);
-        } catch {
+        } catch (ex) {
             // Ignore errors
         }
 
