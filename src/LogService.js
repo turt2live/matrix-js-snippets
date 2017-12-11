@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import moment from "moment";
 import winston from "winston";
-import * as chalk from "chalk";
+import chalk from "chalk";
 
 const TERM_COLORS = {
     error: "red",
