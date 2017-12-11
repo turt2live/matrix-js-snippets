@@ -12,7 +12,7 @@
  * @param {MatrixClient} client the matrix client to accept invites for
  * @param {inviteHandler} [fn] optional handler for filtering invites
  */
-module.exports = (client, fn) => {
+export function autoAcceptInvites(client, fn) {
     client.on('event', event => {
         if (event.getType() !== "m.room.member") return;
         if (event.getStateKey() !== client.credentials.userId) return;
@@ -26,4 +26,4 @@ module.exports = (client, fn) => {
         if (!allow.then) allow = Promise.resolve(allow);
         allow.then(doAllow => doAllow ? client.joinRoom(event.getRoomId()) : null);
     });
-};
+}

@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import moment from "moment";
 import winston from "winston";
+import * as chalk from "chalk";
 
 const TERM_COLORS = {
     error: "red",
@@ -34,7 +35,7 @@ let logger = null;
 /**
  * Exposes an easy replacement for console.log
  */
-export default class LogService {
+export class LogService {
 
     /**
      * Configures the log service
