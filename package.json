@@ -1,8 +1,8 @@
 {
   "name": "matrix-js-snippets",
-  "version": "0.1.4",
+  "version": "0.1.17",
   "description": "A small collection of JS snippets for matrix bots",
-  "author": "Travis Ralston <travis.nathaniel.ralston@gmail.com> (http://travisralston.me)",
+  "author": "Travis Ralston <travis@t2bot.io> (http://travisralston.me)",
   "license": "MIT",
   "homepage": "https://github.com/turt2live/matrix-js-snippets#readme",
   "keywords": [
@@ -25,12 +25,13 @@
   "files": [
     "LICENSE",
     "README.md",
-    "index.js",
-    "lib/"
+    "lib/",
+    "index.d.ts"
   ],
   "dependencies": {
     "chalk": "^2.3.0",
     "moment": "^2.19.4",
+    "typescript": "^2.6.2",
     "winston": "^2.4.0"
   },
   "devDependencies": {
@@ -39,9 +40,12 @@
     "matrix-js-sdk": "^0.9.2"
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
   },
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "build": "babel src -d lib"
   }
