@@ -19,6 +19,7 @@ class LogConfig {
     constructor() {
         this.file = "logs/matrix.log";
         this.console = true;
+        this.writeFiles = true;
         this.consoleLevel = "info";
         this.fileLevel = "verbose";
         this.rotate = {
@@ -52,19 +53,21 @@ export class LogService {
             // Ignore errors
         }
 
-        transports.push(new (winston.transports.File)({
-            json: false,
-            name: "file",
-            filename: logConfig.file,
-            timestamp: LogService._now,
-            formatter: LogService._winstonFormatter,
-            level: logConfig.fileLevel,
-            maxsize: logConfig.rotate.size,
-            maxFiles: logConfig.rotate.count,
-            zippedArchive: false,
-        }));
+        if (logConfig.writeFiles) {
+            transports.push(new (winston.transports.File)({
+                json: false,
+                name: "file",
+                filename: logConfig.file,
+                timestamp: LogService._now,
+                formatter: LogService._winstonFormatter,
+                level: logConfig.fileLevel,
+                maxsize: logConfig.rotate.size,
+                maxFiles: logConfig.rotate.count,
+                zippedArchive: false,
+            }));
+        }
 
-        if (logConfig.console) {
+        if (logConfig.console || !logConfig.writeFiles) {
             transports.push(new (winston.transports.Console)({
                 json: false,
                 name: "console",

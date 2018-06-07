@@ -29,6 +29,12 @@ declare module "matrix-js-snippets" {
         console: boolean
 
         /**
+         * Whether or not to write logs to a file. If disabled, console logging is implicitly
+         * enabled.
+         */
+        writeFiles?: boolean
+
+        /**
          * The level to log to the console at, if enabled
          */
         consoleLevel: "error"|"warn"|"info"|"verbose"|"silly"
