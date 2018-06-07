@@ -53,6 +53,9 @@ export class LogService {
             // Ignore errors
         }
 
+        // Backwards compatibility
+        if (logConfig.writeFiles === undefined) logConfig.writeFiles = true;
+
         if (logConfig.writeFiles) {
             transports.push(new (winston.transports.File)({
                 json: false,
